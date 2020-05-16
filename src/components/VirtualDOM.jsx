@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const VirtualDOM = () => {
   const [isClicked, setIsClicked] = useState(false)
@@ -32,6 +32,7 @@ const VirtualDOM = () => {
             <p>But updating the DOM is slow, especially when you're having to figure out how every piece of HTML, CSS, and dynamic pieces need to render</p>
             <p>The virtual DOM creates a virtual replica of the DOM, so it can then figure out what needs to be updated when components update. This way only the pieces of the DOM that need to change - change.</p>
             <p>Read more <a href="https://www.pluralsight.com/guides/virtual-dom-explained">here</a>!</p>
+            <p><Link to="/Components">An interview with a React component</Link></p>
           </div>
         )}
     </div>

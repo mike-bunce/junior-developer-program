@@ -4,6 +4,8 @@ import ReactComponent from './components/ReactComponent'
 import SinglePageApplications from './components/SinglePageApplications'
 import ReactAppsAtTELUS from './components/ReactAppsAtTELUS'
 import VirtualDOM from './components/VirtualDOM'
+import Components from './components/Components'
+import Tutorial from './components/Tutorial'
 import './App.css'
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -17,6 +19,8 @@ function App() {
           <Route exact path="/single-page-applications" component={SinglePageApplications} />
           <Route exact path="/react-apps-at-telus" component={ReactAppsAtTELUS} />
           <Route exact path="/virtual-dom" component={VirtualDOM} />
+          <Route exact path="/components" component={Components} />
+          <Route exact path="/tutorial" component={Tutorial} />
         </BrowserRouter>
       </header>
     </div>

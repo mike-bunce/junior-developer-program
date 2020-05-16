@@ -10,6 +10,25 @@
   text-align: left;
 }
 
+.interview {
+  text-align: left;
+  font-size: calc(5px + 2vmin)
+}
+
+.interviewee {
+  color: #E3D414;
+}
+
+.navigation {
+  text-decoration: none;
+}
+
+.navigation li {
+  padding-right: 15px;
+  font-size: 20px;
+  display: inline-block;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

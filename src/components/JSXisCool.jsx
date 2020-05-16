@@ -19,8 +19,11 @@ const JSXisCool = (props) => {
         {isCool && (
             <h2>Yes, JSX is cool. Look at how I can embed HTML in my javascript</h2>
         )}
-        {!isCool && <p>Not everyone can be JSX</p>}
-        {!isCool && (<div><img alt="JSX not cool?" src="https://static.boredpanda.com/blog/wp-content/uploads/2014/11/most-popular-cats-grumpy-cat-4.jpg" />
+        {isCool === false && <p>Not everyone can be JSX</p>}
+        {isCool === false && (<div><img alt="JSX not cool?" src="https://static.boredpanda.com/blog/wp-content/uploads/2014/11/most-popular-cats-grumpy-cat-4.jpg" />
+          <p>But seriously though, JSX is a syntax extension to JavaScript, so yes it's very cool.</p>
+          <p>By embedding HTML in Javascript, you are able to take advantage of everything that Javascript offers, directly in your HTML.</p>
+          <p>Let's look under the hood.</p>
           <p><Link to="/single-page-applications" >Single Page Applications</Link></p></div>)
         }
     </div>
@@ -32,7 +35,7 @@ JSXisCool.propTypes = {
 };
 
 JSXisCool.defaultProps = {
-  isJSXCool: true
+  isJSXCool: undefined 
 };
 
 export default JSXisCool;
