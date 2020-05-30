@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Tutorial = () => {
   return (
     <div className="inner-page">
-      <h2>Hands on activity</h2>
+      <h2>Coding challenge</h2>
       <p>Create a simple React-based single page application</p>
       <p>Using the following tools:</p>
       <ul>
@@ -28,6 +28,7 @@ const Tutorial = () => {
           <li><Link to="/react-apps-at-telus">React Apps at TELUS</Link></li>
           <li><Link to="/virutal-dom">The Virtual DOM</Link></li>
           <li><Link to="/Components">An Interview with a React component</Link></li>
+          <li><Link to="/Lifecycle">React Lifecycles</Link></li>
       </ul>
     </div>
   );

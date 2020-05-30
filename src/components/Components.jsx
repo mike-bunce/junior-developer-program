@@ -30,7 +30,7 @@ const Components = () => {
           building each layout as its own block. So I'm hoping to find a nice cosy server
           to live on, maybe I'll exist just in the archives on a github server somewhere...
       </p>
-      <Link to="/tutorial">Tutorial</Link>
+      <Link to="/lifecycles">Lifecycles</Link>
     </div>
   );
 };

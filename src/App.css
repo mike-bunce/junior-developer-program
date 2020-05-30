@@ -56,6 +56,12 @@
   color: #61dafb;
 }
 
+.lifecycle-image {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
 a {
   color: #32CD32;
   text-decoration: none;
