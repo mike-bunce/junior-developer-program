@@ -5,7 +5,7 @@ const LifeCycles = () => {
   return (
     <div className="inner-page">
       <h2>React Lifecycle</h2>
-      <p>What are they?</p>
+      <p>What is it?</p>
       <p>A React lifecycle is the various stages in a React component's process. 
         <br />- What happens in a component before it renders, and after it renders, and the various stages in between.
       </p>

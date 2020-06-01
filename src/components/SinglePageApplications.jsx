@@ -14,6 +14,8 @@ const SinglePageApplications = () => {
           <li>Make use of the browser's back and forward buttons</li>
           <li>Navigate to a particular view (aka deep link) directly using the appropriate URL</li>
         </ul>
+        {/* go to App.js file and look at page routing */}
+        <p>Let's take a look at how routing works in this app...</p>
         <p><Link to="/react-apps-at-telus" >React Apps at TELUS</Link></p>
     </div>
   );
