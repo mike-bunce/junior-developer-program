@@ -19,7 +19,7 @@ const VirtualDOM = () => {
             <img
               onClick={clickImage} 
               alt="this is a metoer"
-              src="https://owips.com/sites/default/files/styles/225x120/public/clipart/meteor-clipart/276860/meteor-clipart-transparent-background-276860-6161328.png?itok=DpSXt73t" 
+              src="/meteor.png" 
             />
           </div>)
         }
