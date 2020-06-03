@@ -72,6 +72,15 @@ a:hover {
   text-decoration: underline;
 }
 
+.smaller {
+  width: 40%;
+}
+
+p::selection {
+  background-color: #f7ff00;
+  color: #000000;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

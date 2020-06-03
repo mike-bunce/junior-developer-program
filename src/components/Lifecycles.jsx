@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from './Header';
 
 const LifeCycles = () => {
   return (
     <div className="inner-page">
+      <Header />
       <h2>React Lifecycle</h2>
       <p>What is it?</p>
       <p>A React lifecycle is the various stages in a React component's process. 

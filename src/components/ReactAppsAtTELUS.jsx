@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from './Header';
 
 const ReactAppsAtTELUS = () => {
   return (
     <div className="inner-page">
+      <Header />
       <h2>How are React Apps set up at TELUS?</h2>
       <p>React Apps at TELUS are created by Isomorphic Starter Kits</p>
       <p>Isomorphic means the code runs on both the server and the client</p>

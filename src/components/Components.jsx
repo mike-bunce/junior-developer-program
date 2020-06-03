@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from './Header';
 
 const Components = () => {
   return (
     <div className="interview">
+      <Header />
       <h2>An interview with a React component</h2>
       <p>Mike: So you're a React component, tell me a bit about yourself, what do you do?</p>
       <p className="interviewee">{"<BlockQuickLinks/>"}: yeah, so I'm BlockQuickLinks, I'm a React component, I live in an 

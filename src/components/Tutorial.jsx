@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Header from './Header';
 
 const Tutorial = () => {
   return (
     <div className="inner-page">
+      <Header />
       <h2>Coding challenge</h2>
       <p>Create a simple React-based single page application</p>
       <p>Using the following tools:</p>
