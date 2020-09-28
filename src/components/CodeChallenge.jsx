@@ -12,7 +12,7 @@ const CodeChallenge = () => {
         <p>Check out the branch "react-best-practices"</p>
         <p>Go to the JSX component "JunkCode.jsx"</p>
         <p>Refactor this component based on the principles outlined in today's session!</p>
-        <p><Link to="/Semantics">Previous</Link></p>
+        <p><Link to="/Separation">Previous</Link></p>
       </div>
       <div className="two-columns">
         <img src="./countdow.gif" alt="" className="wide-image" />

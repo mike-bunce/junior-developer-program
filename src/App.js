@@ -10,6 +10,7 @@ import Rerenders from './components/Rerenders'
 import UseReactState from './components/UseReactState'
 import CodeChallenge from './components/CodeChallenge'
 import Semantics from './components/Semantics'
+import Separation from './components/SeparationOfConcerns'
 import './App.css'
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/Rerenders" component={Rerenders} />
           <Route exact path="/UseReactState" component={UseReactState} />
           <Route exact path="/Semantics" component={Semantics} />
+          <Route exact path="/Separation" component={Separation} />
           <Route exact path="/CodeChallenge" component={CodeChallenge} />
         </BrowserRouter>
       </header>

@@ -16,7 +16,7 @@ const Semantics = () => {
         <p>For function names, be succinct, but still describe what the function is doing, 
           remember: a function should only do one thing</p>
         <p><Link to="/UseReactState">Previous</Link></p>
-        <p><Link to="/CodeChallenge">Next</Link></p>
+        <p><Link to="/Separation">Next</Link></p>
       </div>
       <div className="two-columns">
         <img src="./jef-mallett-frazz-comic-strip-detention-for-tomato-semantics.jpg" alt="" className="comic-image" />
