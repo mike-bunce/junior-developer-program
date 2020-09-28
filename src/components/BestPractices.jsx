@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Header from './Header';
 
-const BestPractices = () => {
+const Snakathon = () => {
   
   return (
     <div className="front-page">
-      <Header />
-      <h1>React Best Practices - part 2</h1>
-      <img src="./squares.gif" className="front-image" />
-      <Link to="/DRY">Next</Link>
+      <h1>Snakathon</h1>
     </div>
   );
 };
 
-export default BestPractices;
+export default Snakathon;
