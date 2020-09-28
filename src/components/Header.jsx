@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => { 
     return (
     <div style={ { position: 'absolute', top: '20px', right: '20px' } }>
-        <p>React 101</p>
+        <p><a href="./">React Best Practices</a></p>
     </div>
     );
 }

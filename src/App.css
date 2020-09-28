@@ -8,6 +8,17 @@
 
 .inner-page {
   text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.repeat p {
+  padding: 5px;
+}
+
+.two-columns {
+  width: 50%;
+  display: inline-block;
 }
 
 .interview {
@@ -32,6 +43,78 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+img {
+  border: 14px #d3d3d3 solid;
+  border-radius: 4px;
+}
+
+.inner-image {
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+}
+
+.wide-image {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  max-width: 450px;
+}
+
+.comic-image {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
+.small-image {
+  width: 350px;
+  margin: 0 auto;
+  display: block;
+}
+
+.front-image {
+  width: 450px;
+  margin: 20px auto;
+  display: block;
+  border: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.less-animation {
+  border: none;
+  width: 220px;
+  margin: 0 auto;
+  float: right;
+}
+
+.button {
+  padding: 10px;
+  width: 120px;
+}
+
+.not-my-baby {
+  width: 250px;
+  margin: 20px;
+}
+
+.my-baby {
+  width: 60%;
+  display: block;
+  margin: 30px 0;
+}
+
+.yellow {
+  color: #f7ff00;
+}
+
+.inputField {
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
