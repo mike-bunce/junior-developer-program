@@ -9,7 +9,7 @@ const BestPractices = () => {
       <Header />
       <h1>React Best Practices 2</h1>
       <img src="./squares.gif" className="front-image" alt="" />
-      <Link to="/DRY">Next</Link>
+      <Link to="/DRY">Begin</Link>
     </div>
   );
 };
