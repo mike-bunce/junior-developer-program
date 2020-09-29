@@ -60,7 +60,7 @@ const ES6 = () => {
           <p><Link to="/Rerenders">Next</Link></p>
       </div>
       <div className="two-columns">
-        <img src="desctructuring.jpeg" alt="" className="wide-image" />
+        <img src="desctructuring.jpeg" alt="" className="wide-image border-image" />
       </div>
     </div>
   );

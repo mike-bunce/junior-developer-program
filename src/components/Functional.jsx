@@ -8,7 +8,7 @@ const Functional = () => {
     <div className="inner-page">
       <Header />
       <div className="two-columns">
-        <img src="./wd40.jpeg" alt="" className="wide-image" />
+        <img src="./wd40.jpeg" alt="" className="wide-image border-image" />
       </div>
       <div className="two-columns">
         <h1>Stay functional!</h1>

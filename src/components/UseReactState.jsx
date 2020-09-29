@@ -14,7 +14,7 @@ const UseReactState = () => {
         </p>
         <p>Avoid using nested state if you can, as a change to a property will update the entire object. 
         ...but, if you need to update properties of an existing state object, you can do so using ES6 spread operator and destructoring.</p>
-        <img src="./updating-nested-state.png" className="wide-image" alt="" />
+        <img src="./updating-nested-state.png" className="wide-image border-image" alt="" />
         <p>Read more: <a href="https://dev.to/walecloud/updating-react-nested-state-properties-ga6">Updating nested state</a></p>
         <hr />
         <p>If your state is complex and getting hard to handle, useReducer will help you manage state.</p>
@@ -23,7 +23,7 @@ const UseReactState = () => {
         <p><Link to="/Semantics">Next</Link></p>
       </div>
       <div className="two-columns">
-        <img src="./footup3.gif" alt="" className="inner-image" />
+        <img src="./footup3.gif" alt="" className="inner-image border-image" />
       </div>
     </div>
     

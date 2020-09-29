@@ -11,6 +11,7 @@ import UseReactState from './components/UseReactState'
 import CodeChallenge from './components/CodeChallenge'
 import Semantics from './components/Semantics'
 import Separation from './components/SeparationOfConcerns'
+import JunkCode from './components/JunkCode'
 import './App.css'
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/Semantics" component={Semantics} />
           <Route exact path="/Separation" component={Separation} />
           <Route exact path="/CodeChallenge" component={CodeChallenge} />
+          <Route exact path="/JunkCode" component={JunkCode} />
         </BrowserRouter>
       </header>
     </div>

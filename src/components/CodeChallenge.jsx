@@ -15,7 +15,7 @@ const CodeChallenge = () => {
         <p><Link to="/Separation">Previous</Link></p>
       </div>
       <div className="two-columns">
-        <img src="./countdow.gif" alt="" className="wide-image" />
+        <img src="./countdow.gif" alt="" className="wide-image border-image" />
       </div>
     </div>
     

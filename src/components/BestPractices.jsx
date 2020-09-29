@@ -8,7 +8,7 @@ const BestPractices = () => {
     <div className="front-page">
       <Header />
       <h1>React Best Practices - part 2</h1>
-      <img src="./squares.gif" className="front-image" />
+      <img src="./squares.gif" className="front-image" alt="" />
       <Link to="/DRY">Next</Link>
     </div>
   );

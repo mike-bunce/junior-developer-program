@@ -45,7 +45,7 @@
   pointer-events: none;
 }
 
-img {
+.border-image {
   border: 14px #d3d3d3 solid;
   border-radius: 4px;
 }

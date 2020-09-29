@@ -43,7 +43,7 @@ const ES6 = () => {
         <p><Link to="/UseReactState">Next</Link></p>   
       </div>
       <div className="two-columns">
-        <img src="./hammy-refresh.gif" alt="" className="small-image" />
+        <img src="./hammy-refresh.gif" alt="" className="small-image border-image" />
       </div>
     </div>
   );

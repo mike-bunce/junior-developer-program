@@ -16,7 +16,7 @@ const DRY2 = () => {
         <p><Link to="/Less">Next</Link></p>
       </div>
       <div className="two-columns">
-        <img className="inner-image" alt="" src="./wet-dog.jpeg" />
+        <img className="inner-image border-image" alt="" src="./wet-dog.jpeg" />
       </div>
       
     </div>

@@ -1,0 +1,40 @@
+/* BEGIN SLIDER */
+
+.slider {
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    margin:0;
+    height: 251px;
+}
+.edge {
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+    height:100%;
+    display:block;
+}
+
+.slider ul {
+    overflow:hidden;
+    width:1000%;
+    margin:0;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+.slider ul li {
+    list-style:none;
+    display:inline-block;
+    padding:0 5px 0 0;
+}
+
+.slider ul li img {
+	height: 251px;
+}
+
+/* END SLIDER */

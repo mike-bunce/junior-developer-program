@@ -24,7 +24,7 @@ const Less = () => {
       <p><Link to="/Functional">Next</Link></p>
       </div>
       <div className="two-columns">
-        <img className="less-animation" alt="" src="./bg.gif" />
+        <img className="less-animation border-image" alt="" src="./bg.gif" />
       </div>
       
     </div>

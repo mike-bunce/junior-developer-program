@@ -9,7 +9,7 @@ const Pure = () => {
       <Header />
       
       <div className="two-columns">
-        <img className="inner-image" alt="100% pure juice" src="./pure-juice.jpeg" />
+        <img className="inner-image border-image" alt="100% pure juice" src="./pure-juice.jpeg" />
       </div>
       <div className="two-columns">
       <h1>Stay pure!</h1>
