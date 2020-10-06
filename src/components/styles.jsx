@@ -5,9 +5,9 @@ const Snake = styled.div`
     padding: 5px;
     background-color: red;
     position: absolute;
-    animation: snake 0.3s 0s both;
+    animation: snake 0.5s 0s both;
     @keyframes snake {
-        0% { top: 0 }
+        0% { top: 0; }
         100% { top: 15px }
     }
 `
@@ -27,11 +27,11 @@ const SnakeSquare = styled.div`
     width: 15px;
     height: 15px;
     background-color: green;
-    position: abolute;
-    animation: snakesquare 0.3s 0s both;
-    @keyframes snakesquare {
-        0% { top: 0 }
-        100% { top: 15px }
+    position: absolute;
+    animation: snakesquare${props => props.index} 0.5s 0s both;
+    @keyframes snakesquare${props => props.index} {
+        0% { top: ${props => props.topStart}; left: ${props => props.leftStart}; }
+        100% { top: ${props => props.topEnd}; left: ${props => props.leftEnd}; }
     }
 `
 const Container = styled.div`
