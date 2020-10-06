@@ -2,6 +2,12 @@ import React, {useState} from "react"
 import { Snake, SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
+  const snakeSquares = {
+    1: {topStart: 0, topEnd: 15, leftStart:0, leftEnd: 0},
+    2: {topStart: 15, topEnd: 30, leftStart:0, leftEnd: 0},
+    3: {topStart: 30, topEnd: 30, leftStart:0, leftEnd: 15}
+  };
+
   const DIRECTIONS = {
     LEFT: 37,
     UP: 38,
@@ -9,7 +15,7 @@ const Snakathon = () => {
     DOWN: 40
   };
 
-  const handleKeyDown = function(e) {
+  const handleKeyDown = (e) => {
     if (e.keyCode === DIRECTIONS.LEFT) { //left
       console.log('left');
     } else if (e.keyCode === DIRECTIONS.UP) { // up
@@ -24,6 +30,17 @@ const Snakathon = () => {
       return e.keyCode;
     }
   };
+
+  const repositionSnake = (direction) => {
+    Object.keys(snakeSquares).forEach((index) => {
+      if(snakeSquares[index+1]) {
+        snakeSquares[index] = snakeSquares[index+1];
+      } else {
+        console.log('compute head position using direction');
+      }
+    });
+  }
+
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
   const [firstSquare, setFirstSquare] = useState({topEnd: 0, leftEnd: 0})
   const [snake, setSnake] = useState(['snake']);
