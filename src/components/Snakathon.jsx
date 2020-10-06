@@ -28,11 +28,11 @@ const Snakathon = () => {
     <div className="front-page">
       <h1>Snakathon</h1>
       <Container>
-        <Snake>{snake.map((item) => {return (<React.Fragment>
-        <SnakeSquare item={item} />
-        <SnakeSquare item={item} />
-        <SnakeSquare item={item} />
-      </React.Fragment>)})}</Snake>
+          {snake.map(() => {return (<React.Fragment>
+          <SnakeSquare index="1" topStart="0px" topEnd="15px" leftStart="0px" leftEnd="0px" />
+          <SnakeSquare index="2" topStart="15px" topEnd="30px" leftStart="0px" leftEnd="0px" />
+          <SnakeSquare index="3" topStart="30px" topEnd="30px" leftStart="0px" leftEnd="15px" />
+      </React.Fragment>)})}
       </Container>
       <button onClick={handleSnakeGrow}>Extend Snake</button>
     </div>
