@@ -2,6 +2,29 @@ import React, {useState} from "react"
 import { Snake, SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
+  const DIRECTIONS = {
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40
+  };
+
+  const handleKeyDown = function(e) {
+    if (e.keyCode === DIRECTIONS.LEFT) { //left
+      console.log('left');
+    } else if (e.keyCode === DIRECTIONS.UP) { // up
+      console.log('up');
+    } else if (e.keyCode === DIRECTIONS.RIGHT) { // right
+      console.log('right');
+    } else if (e.keyCode === DIRECTIONS.DOWN) { // down
+      console.log('down');
+    }
+    if ([DIRECTIONS.LEFT, DIRECTIONS.UP, DIRECTIONS.RIGHT, DIRECTIONS.DOWN].includes(e.keyCode)) {
+      console.log('yayayyayaya');
+      return e.keyCode;
+    }
+  };
+
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
   const [snake, setSnake] = useState(['snake']);
   const handleSnakeGrow = (e) => {
@@ -25,7 +48,7 @@ const Snakathon = () => {
   console.log('lengthOfSnake', lengthOfSnake)
   console.log('snake', snake)
   return (
-    <div className="front-page">
+    <div className="front-page" onKeyDown={handleKeyDown} tabIndex="0">
       <h1>Snakathon</h1>
       <Container>
           {snake.map(() => {return (<React.Fragment>
