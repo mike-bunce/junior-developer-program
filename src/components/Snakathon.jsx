@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react"
+import React, {useState, useRef, useEffect} from "react"
 import { SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
@@ -10,6 +10,8 @@ const Snakathon = () => {
 
   const [circuitBreaker, setCircuitBreaker] = useState(false); 
 
+  
+
   const firstSquare = useRef(null);
 
   const DIRECTIONS = {
@@ -19,17 +21,23 @@ const Snakathon = () => {
     DOWN: 40
   };
 
-  let currDir = DIRECTIONS.DOWN;
+  const [currentDirection, setDirection] = useState(DIRECTIONS.DOWN)
 
   const handleKeyDown = (e) => {
     if (Object.values(DIRECTIONS).includes(e.keyCode)) {
       console.log('yayayyayaya', e.keyCode);
-      currDir = e.keyCode;
+      setDirection(e.keyCode);
       repositionSnake(true);
     }
   };
 
   const repositionSnake = (circuitBreak) => {
+    if (firstSquare !== null) {
+      console.log('firstSquare', firstSquare)
+      if (firstSquare.current) {
+        firstSquare.current.focus();
+      }
+    }  
     console.log('circuitBreak', circuitBreak);
     setCircuitBreaker(circuitBreak);
     const snakeSquaresObject = Object.assign({}, snakeSquares);
@@ -43,7 +51,7 @@ const Snakathon = () => {
       } else { // for head of the snake
         snakeSquaresObject[index].topStart = snakeSquaresObject[index].topEnd;
         snakeSquaresObject[index].leftStart = snakeSquaresObject[index].leftEnd;
-        switch (currDir) {
+        switch (currentDirection) {
           case DIRECTIONS.LEFT:
             snakeSquaresObject[index].leftEnd -= 17;
             break;
@@ -68,27 +76,21 @@ const Snakathon = () => {
 
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
   const [snake, setSnake] = useState(['snake']);
-  
-  
-  setInterval(() => {
-    if (circuitBreaker === false) {
-      repositionSnake(false);
-    }
-  }, 2000);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (circuitBreaker === false) {
+        repositionSnake(false);
+      }
+    }, 600);
+    return () => clearInterval(interval);
+  }, [circuitBreaker, repositionSnake]);
 
   const handleSnakeGrow = (e) => {
     setLengthOfSnake(lengthOfSnake + 3)
     const snakeArray = snake;
     snakeArray.push('snake');
     setSnake(snakeArray);
-  }
-
-  if (firstSquare !== null) {
-    console.log('firstSquare', firstSquare)
-    if (firstSquare.current) {
-      firstSquare.current.focus();
-    }
   }
 
   return (
