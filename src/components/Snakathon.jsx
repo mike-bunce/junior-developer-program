@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useRef} from "react"
 import { Snake, SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
@@ -7,6 +7,8 @@ const Snakathon = () => {
     2: {topStart: 15, topEnd: 30, leftStart:0, leftEnd: 0},
     3: {topStart: 30, topEnd: 30, leftStart:0, leftEnd: 15}
   });
+
+  const firstSquare = useRef(null);
 
   const DIRECTIONS = {
     LEFT: 37,
@@ -26,48 +28,50 @@ const Snakathon = () => {
   };
 
   const repositionSnake = () => {
-    Object.keys(snakeSquares).forEach((index) => {
+    console.log('firstSquare', firstSquare);
+    if (firstSquare !== null && firstSquare.current) {
+      firstSquare.current.focus();
+    }
+    const snakeSquaresObject = Object.assign({}, snakeSquares);
+    Object.keys(snakeSquaresObject).forEach((index) => {
       index = parseInt(index);
       // for anything other than head
-      if(snakeSquares[index+1]) {
-        Object.keys(snakeSquares[index]).forEach((_key) => {
-          snakeSquares[index][_key] = snakeSquares[index+1][_key];
+      if(snakeSquaresObject[index+1]) {
+        Object.keys(snakeSquaresObject[index]).forEach((_key) => {
+          snakeSquaresObject[index][_key] = snakeSquaresObject[index+1][_key];
         });
       } else { // for head of the snake
-        snakeSquares[index].topStart = snakeSquares[index].topEnd;
-        snakeSquares[index].leftStart = snakeSquares[index].leftEnd;
+        snakeSquaresObject[index].topStart = snakeSquaresObject[index].topEnd;
+        snakeSquaresObject[index].leftStart = snakeSquaresObject[index].leftEnd;
         switch (currDir) {
           case DIRECTIONS.LEFT:
-            snakeSquares[index].leftEnd -= 17;
+            snakeSquaresObject[index].leftEnd -= 17;
             break;
           case DIRECTIONS.RIGHT:
-            snakeSquares[index].leftEnd += 17;
+            snakeSquaresObject[index].leftEnd += 17;
             break;
           case DIRECTIONS.UP:
-            snakeSquares[index].topEnd -= 17;
+            snakeSquaresObject[index].topEnd -= 17;
             break;
           case DIRECTIONS.DOWN:
-            snakeSquares[index].topEnd += 17;
+            snakeSquaresObject[index].topEnd += 17;
             break;
           default:
             break;
         }
       }
     });
-    setSnakeSquares(snakeSquares);
-    console.log('end', snakeSquares);
+    setSnakeSquares(snakeSquaresObject);
+    console.log('snakeSquares', snakeSquares);
   }
 
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
-  const [firstSquare, setFirstSquare] = useState({topEnd: 0, leftEnd: 0})
   const [snake, setSnake] = useState(['snake']);
-  const [previousSquare, setPreviousSquare] = useState({topEnd: 0, leftEnd: 0})
   
   
   setInterval(() => {
-    setPreviousSquare({...previousSquare, topEnd: firstSquare.topEnd})
-    setFirstSquare({...firstSquare, topEnd: firstSquare.topEnd + 19})
-  }, 600);
+    repositionSnake();
+  }, 2000);
   
 
   const handleSnakeGrow = (e) => {
@@ -76,16 +80,15 @@ const Snakathon = () => {
     snakeArray.push('snake');
     setSnake(snakeArray);
   }
-  console.log('firstSquare.topEnd', firstSquare.topEnd)
-  console.log('previousSquare.topEnd', previousSquare.topEnd)
+
   return (
     <div className="front-page" onKeyDown={handleKeyDown} tabIndex="0">
       <h1>Snakathon</h1>
       <Container>
           {snake.map(() => {return (<React.Fragment>
-            <SnakeSquare index="1" topStart={previousSquare.topEnd.toString()} topEnd={firstSquare.topEnd.toString()} leftStart={0} leftEnd={0} />
-            <SnakeSquare index="2" topStart={19} topEnd={38} leftStart={0} leftEnd={0} />
-            <SnakeSquare index="3" topStart={38} topEnd={38} leftStart={0} leftEnd={19} />
+            <SnakeSquare ref={firstSquare} index="1" topStart={snakeSquares['1'].topStart.toString()} topEnd={snakeSquares['1'].topEnd.toString()} leftStart={snakeSquares['1'].leftStart.toString()} leftEnd={snakeSquares['1'].leftEnd.toString()} />
+            <SnakeSquare index="3" topStart={snakeSquares['2'].topStart.toString()} topEnd={snakeSquares['2'].topEnd.toString()} leftStart={snakeSquares['2'].leftStart.toString()} leftEnd={snakeSquares['2'].leftEnd.toString()} />
+            <SnakeSquare index="2" topStart={snakeSquares['3'].topStart.toString()} topEnd={snakeSquares['3'].topEnd.toString()} leftStart={snakeSquares['3'].leftStart.toString()} leftEnd={snakeSquares['3'].leftEnd.toString()} />
       </React.Fragment>)})}
       </Container>
       <button onClick={handleSnakeGrow}>Extend Snake</button>
