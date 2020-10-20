@@ -1,5 +1,5 @@
 import React, {useState, useRef} from "react"
-import { Snake, SnakeSquare, Container } from './styles'
+import { SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
   const [snakeSquares, setSnakeSquares] = useState({
@@ -28,9 +28,11 @@ const Snakathon = () => {
   };
 
   const repositionSnake = () => {
-    console.log('firstSquare', firstSquare);
-    if (firstSquare !== null && firstSquare.current) {
-      firstSquare.current.focus();
+    if (firstSquare !== null) {
+      console.log('firstSquare', firstSquare)
+      if (firstSquare.current) {
+        firstSquare.current.focus();
+      }
     }
     const snakeSquaresObject = Object.assign({}, snakeSquares);
     Object.keys(snakeSquaresObject).forEach((index) => {
@@ -69,10 +71,10 @@ const Snakathon = () => {
   const [snake, setSnake] = useState(['snake']);
   
   
-  setInterval(() => {
-    repositionSnake();
-  }, 2000);
-  
+  // setInterval(() => {
+  //   repositionSnake();
+  // }, 2000);
+
 
   const handleSnakeGrow = (e) => {
     setLengthOfSnake(lengthOfSnake + 3)
@@ -82,13 +84,13 @@ const Snakathon = () => {
   }
 
   return (
-    <div className="front-page" onKeyDown={handleKeyDown} tabIndex="0">
+    <div className="front-page">
       <h1>Snakathon</h1>
       <Container>
           {snake.map(() => {return (<React.Fragment>
-            <SnakeSquare ref={firstSquare} index="1" topStart={snakeSquares['1'].topStart.toString()} topEnd={snakeSquares['1'].topEnd.toString()} leftStart={snakeSquares['1'].leftStart.toString()} leftEnd={snakeSquares['1'].leftEnd.toString()} />
+            <SnakeSquare index="1" topStart={snakeSquares['1'].topStart.toString()} topEnd={snakeSquares['1'].topEnd.toString()} leftStart={snakeSquares['1'].leftStart.toString()} leftEnd={snakeSquares['1'].leftEnd.toString()} />
             <SnakeSquare index="3" topStart={snakeSquares['2'].topStart.toString()} topEnd={snakeSquares['2'].topEnd.toString()} leftStart={snakeSquares['2'].leftStart.toString()} leftEnd={snakeSquares['2'].leftEnd.toString()} />
-            <SnakeSquare index="2" topStart={snakeSquares['3'].topStart.toString()} topEnd={snakeSquares['3'].topEnd.toString()} leftStart={snakeSquares['3'].leftStart.toString()} leftEnd={snakeSquares['3'].leftEnd.toString()} />
+            <SnakeSquare tabIndex="0" ref={firstSquare} onKeyDown={handleKeyDown} index="2" topStart={snakeSquares['3'].topStart.toString()} topEnd={snakeSquares['3'].topEnd.toString()} leftStart={snakeSquares['3'].leftStart.toString()} leftEnd={snakeSquares['3'].leftEnd.toString()} />
       </React.Fragment>)})}
       </Container>
       <button onClick={handleSnakeGrow}>Extend Snake</button>
