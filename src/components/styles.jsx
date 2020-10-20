@@ -11,17 +11,7 @@ const Snake = styled.div`
         100% { top: 15px }
     }
 `
-// const snakesquare = keyframes`
-//     0% {
-//         top: 0;
-//         right: 0;
-//     }
 
-//     100% {
-//         top: 15px;
-//         right: 0px;
-//     }
-// `
 const SnakeSquare = styled.div`
     border: 2px solid #ffffff;
     width: 15px;
@@ -30,8 +20,8 @@ const SnakeSquare = styled.div`
     position: absolute;
     animation: snakesquare${props => props.index} 0.5s 0s both;
     @keyframes snakesquare${props => props.index} {
-        0% { top: ${props => props.topStart}; left: ${props => props.leftStart}; }
-        100% { top: ${props => props.topEnd}; left: ${props => props.leftEnd}; }
+        0% { top: ${props => props.topStart}px; left: ${props => props.leftStart}px; }
+        100% { top: ${props => props.topEnd}px; left: ${props => props.leftEnd}px; }
     }
 `
 const Container = styled.div`

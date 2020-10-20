@@ -27,21 +27,31 @@ const Snakathon = () => {
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
   const [firstSquare, setFirstSquare] = useState({topEnd: 0, leftEnd: 0})
   const [snake, setSnake] = useState(['snake']);
+  const [previousSquare, setPreviousSquare] = useState({topEnd: 0, leftEnd: 0})
+  
+  
+  setInterval(() => {
+    setPreviousSquare({...previousSquare, topEnd: firstSquare.topEnd})
+    setFirstSquare({...firstSquare, topEnd: firstSquare.topEnd + 19})
+  }, 600);
+  
+
   const handleSnakeGrow = (e) => {
     setLengthOfSnake(lengthOfSnake + 3)
     const snakeArray = snake;
     snakeArray.push('snake');
     setSnake(snakeArray);
   }
-  
+  console.log('firstSquare.topEnd', firstSquare.topEnd)
+  console.log('previousSquare.topEnd', previousSquare.topEnd)
   return (
     <div className="front-page" onKeyDown={handleKeyDown} tabIndex="0">
       <h1>Snakathon</h1>
       <Container>
           {snake.map(() => {return (<React.Fragment>
-            <SnakeSquare index="1" topStart={} topEnd={firstSquare.topEnd} leftStart="0px" leftEnd="0px" />
-            <SnakeSquare index="2" topStart="15px" topEnd="30px" leftStart="0px" leftEnd="0px" />
-            <SnakeSquare index="3" topStart="30px" topEnd="30px" leftStart="0px" leftEnd="15px" />
+            <SnakeSquare index="1" topStart={previousSquare.topEnd.toString()} topEnd={firstSquare.topEnd.toString()} leftStart={0} leftEnd={0} />
+            <SnakeSquare index="2" topStart={19} topEnd={38} leftStart={0} leftEnd={0} />
+            <SnakeSquare index="3" topStart={38} topEnd={38} leftStart={0} leftEnd={19} />
       </React.Fragment>)})}
       </Container>
       <button onClick={handleSnakeGrow}>Extend Snake</button>
