@@ -2,11 +2,11 @@ import React, {useState} from "react"
 import { Snake, SnakeSquare, Container } from './styles'
 
 const Snakathon = () => {
-  const snakeSquares = {
+  const [snakeSquares, setSnakeSquares] = useState({
     1: {topStart: 0, topEnd: 15, leftStart:0, leftEnd: 0},
     2: {topStart: 15, topEnd: 30, leftStart:0, leftEnd: 0},
     3: {topStart: 30, topEnd: 30, leftStart:0, leftEnd: 15}
-  };
+  });
 
   const DIRECTIONS = {
     LEFT: 37,
@@ -15,30 +15,47 @@ const Snakathon = () => {
     DOWN: 40
   };
 
+  let currDir = DIRECTIONS.DOWN;
+
   const handleKeyDown = (e) => {
-    if (e.keyCode === DIRECTIONS.LEFT) { //left
-      console.log('left');
-    } else if (e.keyCode === DIRECTIONS.UP) { // up
-      console.log('up');
-    } else if (e.keyCode === DIRECTIONS.RIGHT) { // right
-      console.log('right');
-    } else if (e.keyCode === DIRECTIONS.DOWN) { // down
-      console.log('down');
-    }
-    if ([DIRECTIONS.LEFT, DIRECTIONS.UP, DIRECTIONS.RIGHT, DIRECTIONS.DOWN].includes(e.keyCode)) {
-      console.log('yayayyayaya');
-      return e.keyCode;
+    if (Object.values(DIRECTIONS).includes(e.keyCode)) {
+      console.log('yayayyayaya', e.keyCode);
+      currDir = e.keyCode;
+      repositionSnake();
     }
   };
 
-  const repositionSnake = (direction) => {
+  const repositionSnake = () => {
     Object.keys(snakeSquares).forEach((index) => {
+      index = parseInt(index);
+      // for anything other than head
       if(snakeSquares[index+1]) {
-        snakeSquares[index] = snakeSquares[index+1];
-      } else {
-        console.log('compute head position using direction');
+        Object.keys(snakeSquares[index]).forEach((_key) => {
+          snakeSquares[index][_key] = snakeSquares[index+1][_key];
+        });
+      } else { // for head of the snake
+        snakeSquares[index].topStart = snakeSquares[index].topEnd;
+        snakeSquares[index].leftStart = snakeSquares[index].leftEnd;
+        switch (currDir) {
+          case DIRECTIONS.LEFT:
+            snakeSquares[index].leftEnd -= 17;
+            break;
+          case DIRECTIONS.RIGHT:
+            snakeSquares[index].leftEnd += 17;
+            break;
+          case DIRECTIONS.UP:
+            snakeSquares[index].topEnd -= 17;
+            break;
+          case DIRECTIONS.DOWN:
+            snakeSquares[index].topEnd += 17;
+            break;
+          default:
+            break;
+        }
       }
     });
+    setSnakeSquares(snakeSquares);
+    console.log('end', snakeSquares);
   }
 
   const [lengthOfSnake, setLengthOfSnake] = useState(3)
