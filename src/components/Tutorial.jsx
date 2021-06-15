@@ -19,7 +19,7 @@ const Tutorial = () => {
       <ul>
           <li>Contain at least three pages (or "views")</li>
           <li>Each page must have at least one dynamic piece of content that responds to state changes
-              <li>Use useState React hook , or if you're more comfortable, a class based component</li>
+              <li>Use useState React hook</li>
           </li>          
       </ul>
       <p>Clone github.com/mike-bunce/junior-developer-program for reference</p>
