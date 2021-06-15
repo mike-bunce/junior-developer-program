@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import Child from './Child';
+import Band from './Band';
 
 const ES6 = () => {
-  const [isMyBaby, setIsMyBaby] = useState();
-  const [babyName, setBabyName] = useState();
-  const alfie = {
-    gender: 'boy',
-    eyeColour: 'blue',
-    hairColour: 'light brown',
-    cute: true,
-    name: 'Alfie',
-    middleName: 'Ronan',
-    isMyBaby,
-    babyName
+  const [isMyFavouriteBand, setIsMyFavouriteBand] = useState();
+  const [bandName, setBandName] = useState();
+  const band = {
+    genre: 'indie',
+    favouriteAlbum: 'In Rainbows',
+    country: 'England',
+    cool: true,
+    name: 'radiohead',
+    studioAlbums: 9,
+    leadSinger: 'Thom Yorke',
+    isMyFavouriteBand,
+    bandName
   }
   const handleSubmit = (event) => {
     if (event) {
       event.preventDefault()
-      setIsMyBaby(babyName === alfie.name || babyName === alfie.middleName)
+      setIsMyFavouriteBand(bandName === band.name)
     }
   }
   const handleInputChange = (event) => {
     event.persist()
-    setBabyName(event.target.value)
+    setBandName(event.target.value)
   }
   
   return (

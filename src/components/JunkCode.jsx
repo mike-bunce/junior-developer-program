@@ -5,14 +5,6 @@ import $ from 'jquery';
 import './slider.css';
 
 const jQueryCode = () => {
-    window.requestAnimationFrame = (function(){
-      return  window.requestAnimationFrame       ||
-              window.webkitRequestAnimationFrame ||
-              window.mozRequestAnimationFrame    ||
-              function( callback ){
-                window.setTimeout(callback, 1000 / 60);
-              };
-    })();
     
     (function imageSlider(){
         var totalWidth = 0;
@@ -24,16 +16,15 @@ const jQueryCode = () => {
     
         slideCount = slideCount / 2;
     
-      var bannerWidth = $('div.inner-page div.banner-container').width();
-    
-      var speed = 10 * totalWidth;	
+        var speed = 10 * totalWidth;	
         
         var adjustment = (50 / 100) * totalWidth + (slideCount * 5);
         
         $(".slideContainer").animate({marginLeft:-adjustment},speed, 'linear', function(){
                     $(this).css({marginLeft:0}).find("li:last");
             });
-            requestAnimationFrame(imageSlider);
+        //native to the browser
+        requestAnimationFrame(imageSlider);
     })();
 }
 
@@ -49,9 +40,9 @@ const JunkCode = () => {
             <p>Convert the Jquery and old timey JavaScript to React</p>
             <p>Use React Best Practices.</p>
         </div>
-        <div className="slider">
-            <ul className="slideContainer">
-                <li className="slideItem first-half">
+        <div class="slider">
+            <ul class="slideContainer">
+                <li class="slideItem first-half">
                     <img width="447" height="251" src="http://www.rbfilms.uk/wp-content/uploads/2020/09/72087132_2371856152933252_3833090850905128960_o-e1601304166123.jpg" className="attachment-full size-full" alt="" />
                 </li>
                             

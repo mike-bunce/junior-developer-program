@@ -98,12 +98,13 @@
   width: 120px;
 }
 
-.not-my-baby {
-  width: 250px;
-  margin: 20px;
+.not-my-favourite-band {
+  width: 60%;
+  display: block;
+  margin: 30px 0;
 }
 
-.my-baby {
+.my-favourite-band {
   width: 60%;
   display: block;
   margin: 30px 0;
