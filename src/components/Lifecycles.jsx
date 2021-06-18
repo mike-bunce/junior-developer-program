@@ -11,7 +11,7 @@ const LifeCycles = () => {
       <p>A React lifecycle is the various stages in a React component's process. 
         <br />- What happens in a component before it renders, and after it renders, and the various stages in between.
       </p>
-      <p>In Class-based components you have access to lifecycle methods, these include:
+      <p>In older, Class-based components, you have access to lifecycle methods, these include:
         <br />-componentWillMount
         <br />-componentDidMount
         <br />-componentWillReceiveProps
