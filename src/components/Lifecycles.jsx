@@ -24,7 +24,7 @@ const LifeCycles = () => {
       </p>
       <p>Lifecycles are really useful for implementing code that needs to run at a particular point,
         a good example is listeners - listeners need to fire when the component mounts, and then removed
-        when a component unmounts - this helps with page performance and making sure code is constantly firing
+        when a component unmounts - this helps with page performance and making sure code isn't constantly firing
         when it doesn't need to be.
       </p>
       <p>Functional components, such as components that use React Hooks have lifecycles too but there are different ways to achieve the same thing, but rather than having 
