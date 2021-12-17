@@ -12,6 +12,7 @@ import CodeChallenge from './components/CodeChallenge'
 import Semantics from './components/Semantics'
 import Separation from './components/SeparationOfConcerns'
 import JunkCode from './components/JunkCode'
+import JunkCodeSolution from './components/JunkCodeSolution'
 import './App.css'
 import { BrowserRouter, Route } from "react-router-dom";
 

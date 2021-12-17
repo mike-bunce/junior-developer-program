@@ -26,7 +26,7 @@ const ES6 = () => {
     }
   }
   const handleInputChange = (event) => {
-    event.persist()
+    // event.persist()
     setBandNameValue(event.target.value.toLowerCase())
   }
   
